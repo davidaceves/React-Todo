@@ -14,23 +14,11 @@ class App extends React.Component {
     };
   }
 
-  formSubmitHandler = event => {
-    event.preventDefault();
-
-    let newTask = {
-      task: this.state.task,
-      id: Date.now(),
-      completed: false
-    }
-    
-
-  }
-
   render() {
     return (
-      <form onSubmit={this.formSubmitHandler}>
+      <div>
         <TodoForm />
-      </form>
+      </div>
     );
   }
 }
