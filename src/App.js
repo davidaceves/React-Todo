@@ -1,5 +1,6 @@
 import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
+import TodoList from './components/TodoComponents/TodoList';
 
 const to_do = [
   {
@@ -23,10 +24,28 @@ class App extends React.Component {
     this.setState ({ [event.target.name]: event.target.value });
   };
 
+  addItemHandler = event => {
+    event.preventDefault();
+    this.setState(prevState => {
+      return {
+        to_do: [
+          ...prevState.to_do,
+          {
+            task: prevState.task,
+            id: Date.now(),
+            completed: false
+          }
+        ],
+        task: ""
+      }
+    })
+  }
+
   render() {
     return (
       <div>
-        <TodoForm task={this.state.task} inputHandler={this.inputHandler} />
+        <TodoForm task={ this.state.task } inputHandler={ this.inputHandler } addItemHandler={ this.addItemHandler } />
+        <TodoList to_do={ this.state.to_do }/>
       </div>
     );
   }
