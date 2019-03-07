@@ -1,12 +1,12 @@
 import React from "react";
 
-function TodoForm() {
+function TodoForm(props) {
     return (
-        <React.Fragment>
-            <input name="todo" placeholder="...todo"/> 
-            <button>Add Todo</button>
+        <form onSubmit={ props.addItemHandler }>
+            <input type="text" name="task" placeholder="...todo" value={props.task} onChange={props.inputHandler}/> 
+            <button type="submit">Add Todo</button>
             <button>Clear Completed</button>
-        </React.Fragment>
+        </form>
     )
 }
 
