@@ -1,8 +1,28 @@
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Inconsolata', monospace;
+    font-size: 20px;
+}
+
+.todo-list {
+    width: 50%;
+    border-radius: 5px;
+    margin: 2% 0;
+}
+
 .task {
-    background-color: #e64944;
+    color: white;
+    background-color: gray;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding-left: 5%;
+    margin: 5% 0;
 }
 
 .completed {
-    background-color: #d17d7c;
+    background-color: darkgray;
     text-decoration: line-through;
 }

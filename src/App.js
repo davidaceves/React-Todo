@@ -6,7 +6,7 @@ import "./components/TodoComponents/Todo.css"
 
 const to_do = [
   {
-    task: ""
+    task: "Add more..."
   }
 ]
 
@@ -75,9 +75,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="App">
+        <div className="header"><h1>To-do List</h1></div>
         <TodoForm task={ this.state.task } inputHandler={ this.inputHandler } addItemHandler={ this.addItemHandler } clearCompleted={ this.clearCompleted }/>
-        <TodoList to_do={ this.state.to_do } toggleItem={this.toggleItem}/>
+        <div className="todo-list">
+          <TodoList to_do={ this.state.to_do } toggleItem={this.toggleItem}/>
+        </div>
       </div>
     );
   }
